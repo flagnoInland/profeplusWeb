@@ -1,0 +1,497 @@
+@color-red: #b27b61;
+@color-base: #74b47c;
+@color-orange: #ecb857;
+@screen-sm-min: 768px;
+@hlogo: 60px;
+@mobile: ~"(min-width: 768px)";
+@lcd: ~"(min-width: 992px)";
+@wide: ~"(min-width: 1200px)";
+@handset: ~"(min-width: 400px)";
+@tiny: ~"(min-height: 480px)";
+
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.gradient(@type; @colors; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+	.gradient(@type; @colors; @prefixes; (@index - 1));	
+
+	@prefix  : extract(@prefixes, @index);
+	background-image: ~"-@{prefix}-@{type}-gradient(180deg, @{colors})";
+    & when ( @index = length(@prefixes) ) {
+		background-image: ~"@{type}-gradient(180deg, @{colors})";
+	}
+}
+
+.bright(@pct){
+    filter: brightness(@pct);
+    -webkit-filter: brightness(@pct);
+    -moz-filter: brightness(@pct);
+    -o-filter: brightness(@pct);
+    -ms-filter: brightness(@pct);
+}
+
+.shadow(){
+    box-shadow: 2px 4px 8px 4px #aaa;
+    -moz-box-shadow: 2px 4px 8px 4px #aaa;
+    -webkit-box-shadow: 2px 4px 8px 4px #aaa;
+}
+
+
+.normal() {
+    color: #fff;
+    border-radius: 15px;
+    //border-left: 0px solid #888;
+}
+.focused() {
+    color: #fff;
+    //border-left: 0px solid #888;
+}
+
+.btn-gopage {
+    text-shadow: 0 1px 0 @color-base;
+    .gradient(linear; saturate(@color-base, 70%), saturate(@color-base, 10%));
+    border-color: @color-base;
+	padding: 10px 16px 5px 16px;
+    .normal;
+    &:hover{
+        //.bright(0.8);
+        .focused;
+        .shadow;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 50%);
+        .focused;
+    }
+}
+
+.btn-gopage-ii {
+    text-shadow: 0 1px 0 @color-red;
+    .gradient(linear; saturate(@color-red, 70%), saturate(@color-red, 10%));
+    border-color: @color-red;
+	padding: 10px 16px 5px 16px;
+    .normal;
+    &:hover{
+        //.bright(0.8);
+        .focused;
+        .shadow;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-red, 50%);
+        .focused;
+    }
+}
+
+.btn-gopage-iii {
+    text-shadow: 0 1px 0 @color-orange;
+    .gradient(linear; saturate(@color-orange, 70%), saturate(@color-orange, 10%));
+    border-color: @color-orange;
+	padding: 10px 16px 5px 16px;
+    .normal;
+    &:hover{
+        //.bright(0.8);
+        .focused;
+        .shadow;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 50%);
+        .focused;
+    }
+}
+
+.btn-option {
+    //background-color: @color-base;
+    text-shadow: 0 1px 0 @color-orange;
+    .gradient(linear; saturate(@color-orange, 70%), darken(@color-orange, 20%));
+    border-color: @color-orange;
+    .normal;
+    &:hover{
+        //background-color: saturate(@color-base, 80%);
+        //.bright(0.8);
+        //.gradient(linear; saturate(@color-base, 40%), @color-base);
+        .focused;
+        .shadow;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 50%);
+        .focused;
+    }
+}
+
+.btn-answer {
+    text-shadow: 0 1px 0 @color-orange;
+    border-width: 2px;
+    border-color: darken(@color-orange, 12%);
+    .gradient(linear; @color-orange, 50%, darken(@color-orange, 10%));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,@color-orange), color-stop(50%,darken(@color-orange, 10%)), color-stop(100%,darken(@color-orange, 10%)));
+    .normal;
+    &:hover{
+         .bright(0.8);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 50%);
+        .focused;
+    }
+}
+
+btn:active, .btn.active {
+    background-color: saturate(@color-orange, 90%);
+    color: black;
+}
+
+
+.btn-dialog {
+    background-color: @color-base;
+    padding: 10px 10px;
+    width: 70%;
+    margin: 5px 5px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+
+
+.btn {
+    white-space: normal;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+    font-size: 18px;
+    line-height: 1;
+    max-width: 240px;
+    padding: 10px 12px 10px 12px;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    @media @handset {
+        max-width: 400px;
+        font-size: 20px;
+        padding: 10px 18px 10px 18px;  
+    }
+    @media @mobile {
+        max-width: 600px;
+        font-size: 22px;
+        padding: 10px 24px 10px 24px;
+    }
+    @media @wide {
+        max-width: 800px;
+        font-size: 24px;
+        padding: 10px 32px 10px 32px;
+    }
+}
+
+.btn-lg{
+    max-width: 400px;
+}
+
+.btn-xlg{
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 30px 16px 30px 16px;
+    @media @handset {
+        font-size: 20px;
+    }
+    @media @mobile {
+        font-size: 22px;
+    }
+    @media @wide {
+        font-size: 24px;
+    }
+}
+
+.btn-tiny{
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 20px 16px 20px 16px;
+    @media @mobile {
+        max-width: 350px;
+    }
+}
+
+.container{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    @media @mobile {
+        width: 100%;
+    };
+    @media @lcd {
+        width: 100%;
+    };
+    @media @wide {
+        width: 100%;
+    };
+}
+
+textarea{
+    overflow: hidden;
+}
+
+
+.form-group-lg .form-control {
+    max-width: 320px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 18px;
+    display: inline;
+    @media @mobile{
+        max-width: 420px;
+        font-size: 22px;
+    }
+    @media @lcd{
+        max-width: 520px;
+        font-size: 26px;
+    }
+}
+
+.form-group-ex {
+    height: 40px;
+    max-width: 100px;
+    padding: 10px 10px;
+    font-size: 20px;
+    line-height: 1.3333333;
+    border-radius: 20px;
+    display: inline;
+    @media @mobile{
+        height: 50px;
+        max-width: 180px;
+        font-size: 30px;
+    }
+    @media @lcd{
+        height: 70px;
+        max-width: 200px;
+        font-size: 40px;
+    }
+}
+
+label {
+    font-weight: 400;
+    font-size: 18px;
+    display: block;
+    color: blue;
+}
+
+.accesscode-box{
+    margin: 20px;
+    font-size: 80px;
+    border-radius: 20px;
+    @media @mobile{
+        font-size: 100px;
+    }
+    @media @lcd{
+        font-size: 120px;
+    }
+}
+
+.accesscode-box2{
+    margin: 0px;
+    border-radius: 20px;
+}
+
+.full{
+    height: 50%;
+    @media @tiny {
+        transform: translateY(-60px) translateY(100%) ;
+        -webkit-transform: translateY(-60px) translateY(100%);
+    };
+    
+}
+
+.wrapper{
+    @media @tiny {
+        transform: translateY(-50%) ;
+        -webkit-transform: translateY(-50%);
+    }
+}
+
+
+.frameline{
+    border: 2px solid @color-base;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+	margin: auto;
+    @media @handset {
+        width: 80%;
+    }
+    @media @mobile {
+        width: 50%;
+    }
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.frameqtn{
+    background: fadeout(@color-base,80%);
+    border: 1px solid @color-base;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+	margin: auto;
+    @media @handset {
+        width: 80%;
+    }
+    @media @mobile {
+        width: 50%;
+    }
+}
+
+.frameqtn2{
+    background: fadeout(@color-base,80%);
+    border: 1px solid @color-base;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+	margin: auto;
+}
+
+.frame0qtn2{
+    border: 0px solid @color-base;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+	margin: auto;
+}
+
+
+.frameexam{
+    @media @mobile{
+        width: 80%;
+    }
+    @media @lcd{
+        width: 70%;
+    }
+}
+
+.framenumber{
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 15px 5px 15px;
+    font-size: 15px;
+    background: fadeout(@color-base,80%);
+    border: 1px solid @color-base;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+
+.framenumber2{
+    display: inline-block;
+    margin-right: 10px;  
+    padding: 5px 12px 5px 12px;
+    font-size: 15px;
+    background: fadeout(@color-base,80%);
+    border: 1px solid @color-base;
+    border-radius: 50%;
+    vertical-align: middle;
+    
+}
+
+.num-container{
+    display: inline-block;
+    transform: translateY(-4px);
+}
+
+.form-group-lg select.form-control {
+    line-height: 1.3333333;
+    padding: 0px 12px 0px 12px;
+    width: initial;
+    font-size: 18px;
+    @media @mobile{
+        font-size: 22px;
+    }
+    @media @lcd{
+        font-size: 26px;
+    }
+}
+
+.form-group-xlg .form-control {
+    height: 100px;
+    max-width: 200px;
+    padding: 20px 30px;
+    line-height: 1.3333333;
+    border-radius: 25px;
+    display: inline;
+    @media @mobile{
+        height: 120px;
+        max-width: 250px;
+    }
+    @media @lcd{
+        height: 150px;
+        max-width: 300px;
+    }
+}
+
+.mytextarea {
+	background: white;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+	border-radius: 15px;
+}
+
+.error-msg {
+	color: red;
+	text-align: center;
+} 
+
+.btn-base {
+    background-color: @color-base;
+	padding: 15px 16px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    @media @tiny {
+        padding: 25px 16px;
+    }
+}
+
+.btn-narrow {
+    background-color: @color-base;
+	padding: 5px 16px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 50%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 50%);
+        .focused;
+    }
+}
+
+

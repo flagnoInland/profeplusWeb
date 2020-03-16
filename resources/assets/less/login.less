@@ -1,0 +1,116 @@
+@color-base: #74b47c;
+@screen-sm-min: 768px;
+@hlogo: 60px;
+@mobile: ~"(min-width: 768px)";
+@lcd: ~"(min-width: 992px)";
+@wide: ~"(min-width: 1200px)";
+@handset: ~"(min-width: 500px)";
+@tiny: ~"(max-height: 380px)";
+
+.normal() {
+    color: #fff;
+    border-radius: 15px;
+    border-left: 0px solid #888;
+}
+.focused() {
+    color: #fff;
+    border-left: 0px solid #888;
+}
+
+.btn-base {
+    background-color: @color-base;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 45%);
+        .focused;
+    };
+    &:focus,&.focus{
+        outline: none !important;
+        background-color: saturate(@color-base, 45%);
+        .focused;
+    };
+	@media @mobile {
+        max-width:400px;
+    }
+}
+
+.form-group-lg{
+    margin: 20px auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.42857143;
+  text-align: center;
+  background-image: none;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.btn-link {
+    font-weight: 600;
+    color: #fff;
+    margin: 10px auto;
+    &:hover{
+        color: @color-base;
+        text-decoration: none;
+        background-color: transparent;
+        border: 1px solid #fff;
+    };
+    &:active{
+        text-decoration: none;
+    }
+}
+
+label {
+    font-weight: 400;
+}
+
+
+body {
+    color: #fff;
+    /*background: #fff url(/assets/images/green.png) repeat center top;*/
+    background: #fff url("/images/green-400.png") repeat center top;
+    background-size: cover;
+    @media @handset{
+        background: #fff url("/images/green-768.png") repeat center top;
+    };
+    @media @mobile{
+        background: #fff url("/images/green.png") repeat center top;
+    };
+}
+
+
+.full{
+    height: 50%;
+    @media @handset {
+        transform: translateY(-60px) translateY(100%) ;
+        -webkit-transform: translateY(-60px) translateY(100%);
+    };
+    
+}
+
+.wrapper{
+    @media @handset {
+        transform: translateY(-50%) ;
+        -webkit-transform: translateY(-50%);
+    }
+}
+
+.img-choose-user{
+    width:10rem;
+    max-width: 200px;
+    margin: 10px auto;
+    @media @handset{
+        width: 16rem;
+    }
+    @media @mobile {
+        width: 20rem;
+    }
+}
+
+
+

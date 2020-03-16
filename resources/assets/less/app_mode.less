@@ -1,0 +1,118 @@
+@color-red: #b27b61;
+@color-base: #74b47c;
+@color-orange: #ecb857;
+@screen-sm-min: 768px;
+@hlogo: 60px;
+@mobile: ~"(min-width: 768px)";
+@lcd: ~"(min-width: 992px)";
+@wide: ~"(min-width: 1200px)";
+@handset: ~"(min-width: 500px)";
+@tiny: ~"(max-height: 380px)";
+
+.normal() {
+    color: #fff;
+    border-radius: 15px;
+    border-left: 0px solid #888;
+}
+.focused() {
+    color: #fff;
+    border-left: 0px solid #888;
+}
+
+.btn-red {
+    background-color: @color-red;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-red, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-red, 35%);
+        .focused;
+    }
+}
+
+.btn-base {
+    background-color: @color-base;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+
+.btn-orange {
+    background-color: @color-orange;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    }
+}
+
+
+.btn {
+    white-space: normal;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+    padding: 30px 16px;
+    font-size: 18px;
+    line-height: 1;
+    max-width: 240px;
+    margin: 20px auto;
+    @media @mobile {
+        padding: 30px*2 16px*2;
+        line-height: 2;
+        max-width: 400px;
+        font-size: 30px;
+    }
+}
+
+.full{
+    height: 50%;
+    @media @handset {
+        transform: translateY(-60px) translateY(100%) ;
+        -webkit-transform: translateY(-60px) translateY(100%);
+    };
+    
+}
+
+.wrapper{
+    @media @handset {
+        transform: translateY(-50%) ;
+        -webkit-transform: translateY(-50%);
+    }
+}
+
+
+.img-choose-user{
+    width: 10rem;
+    height: 10rem;
+    margin: 10px auto;
+    @media @handset{
+        width: 16rem;
+        height: 16rem;
+    }
+    @media @mobile {
+        width: 20rem;
+        height: 20rem;
+    }
+}
+
+
+h4{
+    font-size:20px;
+    @media @mobile {
+        font-size: 30px;
+    }
+}

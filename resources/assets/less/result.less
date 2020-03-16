@@ -1,0 +1,161 @@
+@color-red: #b27b61;
+@color-base: #74b47c;
+@color-orange: #ecb857;
+@screen-sm-min: 768px;
+@hlogo: 60px;
+@mobile: ~"(min-width: 768px)";
+@lcd: ~"(min-width: 992px)";
+@wide: ~"(min-width: 1200px)";
+@handset: ~"(min-width: 500px)";
+@tiny: ~"(max-height: 380px)";
+
+.container{
+    margin-left: 0;
+    margin-right: 0;
+    @media @mobile {
+        width: 100%;
+    };
+    @media @lcd {
+        width: 100%;
+    };
+    @media @wide {
+        width: 100%;
+    };
+}
+
+.col-md-4, .col-sm-4, .col-xs-6, .col-md-6, .col-sm-6{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.col-xs-12, .col-sm-12, .col-md-12{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+    
+}
+
+.normal() {
+    color: #fff;
+    border-radius: 15px;
+    border-left: 0px solid #888;
+}
+.focused() {
+    color: #fff;
+    border-left: 0px solid #888;
+}
+
+.btn {
+    white-space: normal;
+}
+
+.btn-orange {
+    background-color: @color-orange;
+    padding: 10px 16px;
+    .normal;
+    @media @mobile{
+        display: inline;
+        padding: 10px 50px;
+    };
+    @media @lcd{
+        display: inline;
+        padding: 10px 80px;
+    };
+    @media @wide{
+        display: inline;
+        padding: 10px 120px;
+    };
+    &:hover{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    }
+}
+
+.btn-orange-2 {
+    background-color: @color-orange;
+    padding: 10px 16px;
+    .normal;
+    @media @mobile{
+        display: inline;
+        padding: 10px 120px;
+    };
+    @media @lcd{
+        display: inline;
+        padding: 10px 160px;
+    };
+    @media @wide{
+        display: inline;
+        padding: 10px 240px;
+    };
+    &:hover{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    }
+}
+
+.btn-green {
+    background-color: @color-base;
+	padding: 5px 16px;
+    .normal;
+    @media @mobile{
+        padding: 10px 16px;
+    };
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+
+.btn-green-2 {
+    background-color: @color-base;
+	padding: 5px 16px;
+    max-width: 600px;
+    .normal;
+    @media @mobile{
+        padding: 10px 16px;
+    };
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+.graph {   
+  height: 65%;
+    @media @mobile {
+        width: 100%;
+    };
+    @media @lcd {
+        width: 80%;
+        display: inline-block;
+        margin-left: 10%;
+    };
+    @media @wide {
+        width: 60%;
+        display: inline-block;
+        margin-left: 20%;
+    };
+}
+
+.btn-lg{
+    font-size: 1.2em;
+    @media @mobile{
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,46 @@
+body {
+  color: #000;
+  background: #fff url(/images/bckg.png) repeat center top;
+  background-size: cover;
+}
+label {
+  color: #f00;
+  font-size: 14px;
+}
+.checkbox label {
+  color: #00f;
+  font-size: 18px;
+}
+.btn-base {
+  background-color: #74b47c;
+  padding: 20px 16px;
+  color: #fff;
+  border-radius: 15px;
+  border-left: 0px solid #888;
+}
+.btn-base:hover {
+  background-color: #4fd960;
+  color: #fff;
+  border-left: 0px solid #888;
+}
+.btn-base:focus,
+.btn-base.focus {
+  background-color: #4fd960;
+  color: #fff;
+  border-left: 0px solid #888;
+}
+.btn-lg {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .btn-lg {
+    font-size: 22px;
+  }
+}
+.btn-width {
+  max-width: 480px;
+}
+.terms {
+  transform: translateY(0%) translateY(0vh);
+  -webkit-transform: translateY(0%) translateY(0vh);
+}

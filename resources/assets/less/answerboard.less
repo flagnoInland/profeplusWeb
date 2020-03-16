@@ -1,0 +1,465 @@
+@color-red: #b27b61;
+@color-base: #74b47c;
+@color-orange: #ecb857;
+@screen-sm-min: 768px;
+@hlogo: 60px;
+@rad1: 16rem;
+@rad2: 20rem;
+@rad3: 24rem;
+@rad4: 26rem;
+@rad5: 28rem;
+@mobile: ~"(min-width: 500px)";
+@lcd: ~"(min-width: 992px)";
+@wide: ~"(min-width: 1200px)";
+@handset: ~"(min-width: 400px)";
+@tiny: ~"(min-height: 480px)";
+
+.normal() {
+    color: #fff;
+    border-radius: 15px;
+    border-left: 0px solid #888;
+}
+.focused() {
+    color: #fff;
+    border-left: 0px solid #888;
+}
+
+body {
+    /*background: #fff url("/assets/images/fondopregunta1.png") repeat center top;*/
+    background: #fff url("/images/fondopregunta1.png") repeat center top;
+    background-size: cover;
+    padding-right: 0 !important;
+}
+
+.challenge{
+    top: 1.1*@rad1;
+    @media @handset {
+        top: 1.1*@rad2;
+    };
+    @media @mobile {
+        top: 1.1*@rad3;
+    };
+    @media @lcd {
+        top: 1.1*@rad4;
+    };
+    @media @wide {
+        ftop: 1.1*@rad5;
+    }
+}
+
+.btn-base {
+    background-color: @color-base;
+    padding: 10px 10px;
+    width: 70%;
+    margin: 5px 5px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+
+.btn-green {
+    background-color: @color-base;
+    padding: 10px 10px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+
+.btn-orange {
+    background-color: @color-orange;
+    padding: 10px 10px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-orange, 35%);
+        .focused;
+    }
+}
+
+.btn-red {
+    background-color: @color-red;
+    padding: 10px 10px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-red, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-red, 35%);
+        .focused;
+    }
+}
+
+.disable{
+    background-color: grey;
+    &:hover{
+        background-color: grey;
+    };
+    &:focus,&.focus{
+        background-color: grey;
+    }
+}
+
+.btn {
+    white-space: normal;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+    font-size: 16px;
+    line-height: 1;
+    max-width: 300px;
+    margin: 10px auto;
+    @media @mobile {
+        font-size: 18px;
+        max-width: 500px;
+    };
+    @media @lcd {
+        font-size: 20px;
+        max-width: 600px;
+    }
+}
+
+.circle-wrapper{
+    width: 50%;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+
+.circle {    
+    position: absolute;
+    display: inline-block;
+    width: @rad1;
+    height: @rad1;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 40px;
+    @media @handset {
+        font-size: 50px;
+        width: @rad2;
+        height: @rad2;
+    };
+    @media @mobile {
+        font-size: 50px;
+        width: @rad3;
+        height: @rad3;
+    };
+    @media @lcd {
+        font-size: 60px;
+        width: @rad4;
+        height: @rad4;
+    };
+    @media @wide {
+        font-size: 60px;
+        width: @rad5;
+        height: @rad5;
+    }
+    
+}
+
+.img-circle{
+    position: relative;
+    width: @rad1;
+    height: @rad1;
+    @media @handset {
+        width: @rad2;
+        height: @rad2;
+    };
+    @media @mobile {
+        width: @rad3;
+        height: @rad3;
+    };
+    @media @lcd {
+        width: @rad4;
+        height: @rad4;
+    };
+    @media @wide {
+        width: @rad5;
+        height: @rad5;
+    }
+}
+
+.logo-circle{
+    position: relative;
+    width: 0.35*@rad1;
+    transform:  translate(-50%,-50%) translate(@rad1/2,-@rad1/2);
+    -webkit-transform: translate(-50%,-50%) translate(@rad1/2,-@rad1/2);
+    @media @handset {
+        width: 0.35*@rad2;
+        transform:  translate(-50%,-50%) translate(@rad2/2,-@rad2/2);
+        -webkit-transform: translate(-50%,-50%) translate(@rad2/2,-@rad2/2);
+    };
+    @media @mobile {
+        width: 0.35*@rad3;
+        transform:  translate(-50%,-50%) translate(@rad3/2,-@rad3/2);
+        -webkit-transform: translate(-50%,-50%) translate(@rad3/2,-@rad3/2);
+    };
+    @media @lcd {
+        width: 0.35*@rad4;
+        transform:  translate(-50%,-50%) translate(@rad4/2,-@rad4/2);
+        -webkit-transform: translate(-50%,-50%) translate(@rad4/2,-@rad4/2);
+    };
+    @media @wide {
+        width: 0.35*@rad5;
+        transform:  translate(-50%,-50%) translate(@rad5/2,-@rad5/2);
+        -webkit-transform: translate(-50%,-50%) translate(@rad5/2,-@rad5/2);
+    }
+}
+
+.ans1{
+    position: absolute;
+    text-align: center;
+    width: @rad1/2;
+    height: @rad1/2;
+    top: 0px;
+    left: 0px;
+    @media @handset {
+        width: @rad2/2;
+        height: @rad2/2;
+    };
+    @media @mobile {
+        width: @rad3/2;
+        height: @rad3/2;
+    };
+    @media @lcd {
+        width: @rad4/2;
+        height: @rad4/2;
+    };
+    @media @wide {
+        width: @rad5/2;
+        height: @rad5/2;
+    }
+}
+    
+.ans2{
+    position: absolute;
+    text-align: center;
+    width: @rad1/2;
+    height: @rad1/2;
+    top: 0px;
+    right: 0px;
+    @media @handset {
+        width: @rad2/2;
+        height: @rad2/2;
+    };
+    @media @mobile {
+        width: @rad3/2;
+        height: @rad3/2;
+    };
+    @media @lcd {
+        width: @rad4/2;
+        height: @rad4/2;
+    };
+    @media @wide {
+        width: @rad5/2;
+        height: @rad5/2;
+    }
+}
+   
+.ans3{
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    top: @rad1/2;
+    width: @rad1/3;
+    height: @rad1/3;
+    @media @handset {
+        width: @rad2/3;
+        height: @rad2/3;
+        top: @rad2/2;
+    };
+    @media @mobile {
+        width: @rad3/3;
+        height: @rad3/3;
+        top: @rad3/2;
+    };
+    @media @lcd {
+        width: @rad4/3;
+        height: @rad4/3;
+        top: @rad4/2;
+    };
+    @media @wide {
+        width: @rad5/3;
+        height: @rad5/3;
+        top: @rad5/2;
+    }
+}
+
+.ans4{
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    left: @rad1/3;
+    width: @rad1/3;
+    height: @rad1/4;
+    @media @handset {
+        left: @rad2/3;
+        width: @rad2/3;
+        height: @rad2/4;
+    };
+    @media @mobile {
+        left: @rad3/3;
+        width: @rad3/3;
+        height: @rad3/4;
+    };
+    @media @lcd {
+        left: @rad4/3;
+        width: @rad4/3;
+        height: @rad4/4;
+    };
+    @media @wide {
+        left: @rad5/3;
+        width: @rad5/3;
+        height: @rad5/4;
+    }
+}
+
+.ans5{
+    position: absolute;
+    text-align: center;
+    right: 0px;
+    top: @rad1/2;
+    width: @rad1/3;
+    height: @rad1/3;
+    @media @mobile {
+        top: @rad2/2;
+        width: @rad2/3;
+        height: @rad2/3;
+    };
+    @media @mobile {
+        top: @rad3/2;
+        width: @rad3/3;
+        height: @rad3/3;
+    };
+    @media @lcd {
+        top: @rad4/2;
+        width: @rad4/3;
+        height: @rad4/3;
+    };
+    @media @wide {
+        top: @rad5/2;
+        width: @rad5/3;
+        height: @rad5/3;
+    }
+}
+
+.btn-cir {
+    background-color: transparent;
+    padding: 0px 0px;
+    color: #fff;
+    border: 0px solid #888;
+    &:hover{
+        background-color: transparent;
+        color: blueviolet;
+        border: 0px solid #888;
+    };
+    &:focus,&.focus{
+        background-color: transparent;
+        color: blueviolet;
+        border: 0px solid #888;
+    }
+}
+
+
+.alert-text{
+    color: #A01C1C;
+}
+
+.ansf{
+    color: transparent;
+    position: absolute;
+    text-align: center;
+    width: @rad1/2;
+    height: 0.7*@rad1;
+    top: 0px;
+    left: 0px;
+    @media @handset {
+        width: @rad2/2;
+        height: 0.7*@rad2;
+    };
+    @media @mobile {
+        width: @rad3/2;
+        height: 0.7*@rad3;
+    };
+    @media @lcd {
+        width: @rad4/2;
+        height: 0.7*@rad4;
+    };
+    @media @wide {
+        width: @rad5/2;
+        height: 0.7*@rad5;
+    }
+}
+
+.ansg{
+    color: transparent;
+    position: absolute;
+    text-align: center;
+    width: @rad1/2;
+    height: 0.7*@rad1;
+    top: 0px;
+    right: 0px;
+    @media @handset {
+        width: @rad2/2;
+        height: 0.7*@rad2;
+    };
+    @media @mobile {
+        width: @rad3/2;
+        height: 0.7*@rad3;
+    };
+    @media @lcd {
+        width: @rad4/2;
+        height: 0.7*@rad4;
+    };
+    @media @wide {
+        width: @rad5/2;
+        height: 0.7*@rad5;
+    }
+}
+
+.ansh{
+    color: transparent;
+    position: absolute;
+    text-align: center;
+    width: @rad1/2;
+    height: 0.3*@rad1;
+    bottom: 0px;
+    left: @rad1/4;
+    @media @handset {
+        left: @rad2/4;
+        width: @rad2/2;
+        height: 0.3*@rad2;
+    };
+    @media @mobile {
+        left: @rad3/4;
+        width: @rad3/2;
+        height: 0.3*@rad3;
+    };
+    @media @lcd {
+        left: @rad4/4;
+        width: @rad4/2;
+        height: 0.3*@rad4;
+    };
+    @media @wide {
+        left: @rad5/4;
+        width: @rad5/2;
+        height: 0.3*@rad5;
+    }
+}
+
+

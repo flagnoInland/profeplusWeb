@@ -1,0 +1,62 @@
+@color-base: #74b47c;
+@handset: ~"(min-width: 400px)";
+@tiny: ~"(max-height: 380px)";
+@mobile: ~"(min-width: 768px)";
+@lcd: ~"(min-width: 992px)";
+@wide: ~"(min-width: 1200px)";
+
+.normal() {
+    color: #fff;
+    border-radius: 15px;
+    border-left: 0px solid #888;
+}
+.focused() {
+    color: #fff;
+    border-left: 0px solid #888;
+}
+
+body {
+    color: #000;
+    background: #fff url(/images/bckg.png) repeat center top;
+    background-size: cover;
+}
+
+label {
+	color: #f00;
+	font-size: 14px;
+}
+
+.checkbox label {
+    color: #00f;
+	font-size: 18px;
+} 
+
+.btn-base {
+    background-color: @color-base;
+	padding: 20px 16px;
+    .normal;
+    &:hover{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    };
+    &:focus,&.focus{
+        background-color: saturate(@color-base, 35%);
+        .focused;
+    }
+}
+
+.btn-lg{
+    font-size: 18px;
+    @media @mobile{
+        font-size: 22px;
+    }
+}
+
+.btn-width{
+    max-width: 480px;
+}
+
+.terms{
+    transform: translateY(0%) translateY(0vh);
+    -webkit-transform: translateY(0%) translateY(0vh);
+}

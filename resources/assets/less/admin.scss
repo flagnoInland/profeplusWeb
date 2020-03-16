@@ -1,0 +1,79 @@
+html{
+    height: 100%;
+    font-size: 14px;
+}
+
+body {
+    color: #fff;
+    background: #fff url("/ProfePlus/assets/images/admin_bckg.png") repeat center top;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.inline-icon{
+    height: 50px;
+}
+
+.h1, h1{
+    font-size: 60px;
+}
+
+.h2, h2{
+    font-size: 40px;
+}
+
+.h3, h3{
+    font-size: 30px;
+}
+
+.h4, h4{
+    font-size: 24px;
+}
+
+.h5, h5{
+    font-size: 20px;
+}
+
+.h6, h6{
+    font-size: 16px;
+}
+
+.p, p{
+    font-size: 14px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.centering{
+    transform: translateY(-50%) translateY(50vh);
+}
+
+.chest {
+    margin: 10px 0px 20px 0px;
+}
+
+.box {
+    margin: auto;
+    max-width: 400px;
+    border: 0px solid;
+    padding: 20px 30px 10px 30px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.block-ctrl{
+    width: 100%;
+    padding: 20px 10px;
+}
